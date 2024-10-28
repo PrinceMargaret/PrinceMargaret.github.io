@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    height: 100vh;
+    background-color: #FFC0CB;
+}
+
+.text {
+    padding: 7%;
+    font-size: 5em;
+}
+.heart {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(255, 0, 0);
+    transform: rotate(-45deg);
+    position: relative;
+    animation: heartbeat 1s infinite;
+}
+
+.heart::before, 
+.heart::after {
+    content: "";
+    height: 100px;
+    width: 100px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0px;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0px;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1)
+            rotate(-45deg);
+    }
+
+    25% {
+        transform: scale(1.25)
+            rotate(-45deg);
+    }
+
+    45% {
+        transform: scale(1.5)
+            rotate(-45deg);
+    }
+
+
+    
+}
+
+.rinky {
+    position: absolute;
+    top: 50%; 
+    right: 50%;
+   
+    transform: translate(50%,-50%);
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 5em;
+    font-weight: 700;
+    color: #1495bd;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+    </style>
+   
+</head>
+
+<body>
+
+    <h1 class="text">I</h1>
+
+   <div class="heart"></div>
+
+    <h1 class="text">You</h1>
+    <h1 class="rinky">Rinky</h1>
+
+    
+</body>
+
+
+</html>
