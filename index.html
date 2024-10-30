@@ -2,17 +2,27 @@
 <!DOCTYPE html>
 <html>
 
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        body {
+
+body {
+
+    background-color: #FFC0CB;
+    
+}
+
+.heartArea{
     display: flex;
     justify-content: center;
     align-items: center;
-   
     height: 100vh;
-    background-color: #FFC0CB;
+    width: auto;
+    top: 50%;
+ 
 }
 
 .text {
@@ -71,9 +81,9 @@
 
 .rinky {
     position: absolute;
-    top: 50%; 
+     
+    top: 55%;
     right: 50%;
-    margin-top: 26%;
     transform: translate(50%,-50%);
     /* text-transform: uppercase; */
     font-family: cursive;
@@ -96,19 +106,64 @@
     1px 30px 60px rgba(16,16,16,0.4);
 }
 
+.input {
+ position: absolute;
+ display: flex;
+ text-align: center;
+ 
+
+}
+
+h3{ display: block;
+    text-align: center;
+}
+
+.userinput{
+float: right;
+padding: 4px;
+margin: 2px;
+}
+
+button {
+background-color: rgb(21, 225, 21);
+padding: 2px;
+border-radius: 4px;
+border-color: blue;
+}
+
+input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: blue;
+  background-color: pink;
+  
+}
+input:focus {
+  border-color: green;
+  outline: 1px dotted #000
+}
     </style>
-   
+
+
 </head>
 
 <body>
+    <button onclick="changeName()" class="userinput">Change</button> 
+    <input id="inputname" value="" class="userinput" placeholder="Name">
+    
 
-    <h1 class="text">I</h1>
-
-    <a href="https://github.com/PrinceMargaret"><div class="heart"></div></a>
-
-    <h1 class="text">You</h1>
-    <!-- <h1 class="rinky">Rinky</h1>  -->
-
+ <div>
+    <br>
+ <h3 id="url" ></h3>
+</div>
+ <div>
+    <div class="heartArea"> 
+        <h1 class="text">I</h1>
+        <a href="https://github.com/PrinceMargaret"><div class="heart"></div></a> 
+        <h1 class="text">You</h1>
+    </div>  
+</div>
+ <div >
     <a href="https://www.instagram.com/margaretuser"><h1 class="rinky" id="name">Rinky</h1></a>
     <script>
         const params = new URLSearchParams(window.location.search);
@@ -118,13 +173,22 @@
         }
         else "Prince"
     </script>
+   </div> 
+   <script type = "text/javascript">  
+ 
+  
+    function  changeName() {   
+      let changedName = document.getElementById("inputname").value;
+      if(changedName){
+      document.getElementById("url").innerHTML = ` Share to your beloved :  <a href= "https://myfeelings.in?name=${changedName}">https://myfeelings.in?name=${changedName} </a>`;
+      document.getElementById("name").innerHTML = changedName;         
+    } 
+}      
+      </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1541426356478953"
 crossorigin="anonymous"></script>
-
-
     
 </body>
-
 
 </html>
