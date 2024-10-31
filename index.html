@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+    <link rel="stylesheet" href="comment.css">
     <style>
 
 body {
@@ -124,7 +126,7 @@ padding: 4px;
 margin: 2px;
 }
 
-button {
+#changeBtn {
 background-color: rgb(21, 225, 21);
 padding: 2px;
 border-radius: 4px;
@@ -152,6 +154,18 @@ input:focus {
   background: pink;  
   color: rgb(236, 18, 18);  
 } 
+
+#comment{
+    text-align: center;
+}
+
+#commentBtn{
+ padding: 2px;
+ margin: 2px;
+background-color: pink;
+outline: 0;
+border-width: 0 0 2px;
+}
     </style>
 
 
@@ -159,13 +173,15 @@ input:focus {
 
 <body>
     <a class="fa fa-instagram" href="https://www.instagram.com/margaretuser"></a>
-    <button onclick="changeName()" class="userinput">Change</button> 
+    <button onclick="onComment()" id="commentBtn"><img src="https://github.com/user-attachments/assets/1e599295-6a7c-4993-9ac3-3bbe85abfc1f" style="height: 15px; width: 15px;"> comment me</button>
+    <button onclick="changeName()" class="userinput" id="changeBtn">Change</button> 
     <input id="inputname" value="" class="userinput" placeholder="Name">
     
 
  <div>
     <br>
  <h3 id="url" ></h3>
+ <div id="comment"></div>
 </div>
  <div>
     <div class="heartArea"> 
@@ -197,9 +213,28 @@ input:focus {
 }      
       </script>
 
+      <script>
+
+    function  onComment() {   
+    
+      document.getElementById("comment").innerHTML = `<form action="https://send.pageclip.co/8b6UOVtWNsmq6kqdwLapTAUXPTNrxkoO/contentform" class="pageclip-form text-center"  method="post">
+                                                        <div>
+                                                        <textarea name="body" rows="7" cols="35" wrap="soft">Write Something...</textarea>
+                                                        </div>
+                                                        <div>
+                                                        <button type="submit" class="pageclip-form__submit" id="myBtn" style="margin-top: 10px;">
+                                                        <span>Send</span>
+                                                        </button>
+                                                        </div>
+                                                    </form>`;
+             
+    } 
+
+      </script>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1541426356478953"
 crossorigin="anonymous"></script>
-    
+<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>    
 </body>
 
 </html>
