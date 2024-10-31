@@ -166,32 +166,48 @@ background-color: pink;
 outline: 0;
 border-width: 0 0 2px;
 }
+
+#myphoto{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+#home{
+    height: 26px;
+    width: 25px;
+    padding-right: 3px;
+}
     </style>
 
 
 </head>
 
 <body>
+    <div style="padding: 5px;">
+    <a class="" href="/index.html"><img src="https://github.com/user-attachments/assets/07a14436-de44-429b-8058-f6c2fa731e6b" id="home"></a>
     <a class="fa fa-instagram" href="https://www.instagram.com/margaretuser"></a>
     <button onclick="onComment()" id="commentBtn"><img src="https://github.com/user-attachments/assets/1e599295-6a7c-4993-9ac3-3bbe85abfc1f" style="height: 15px; width: 15px;"> comment me</button>
     <button onclick="changeName()" class="userinput" id="changeBtn">Change</button> 
     <input id="inputname" value="" class="userinput" placeholder="Name">
-    
+</div>
 
  <div>
     <br>
  <h3 id="url" ></h3>
  <div id="comment"></div>
 </div>
- <div>
+ <div style="display: block; text-align: center;">
     <div class="heartArea"> 
         <h1 class="text">I</h1>
-        <a href="https://github.com/PrinceMargaret"><div class="heart"></div></a> 
+       <div class="heart"></div>
         <h1 class="text">You</h1>
-    </div>  
+        
+    </div> 
+    <h1 class="rinky" id="name">Rinky</h1> 
 </div>
  <div >
-    <a href="https://www.instagram.com/margaretuser"><h1 class="rinky" id="name">Rinky</h1></a>
+    
     <script>
         const params = new URLSearchParams(window.location.search);
         const name = params.get("name");
@@ -218,7 +234,8 @@ border-width: 0 0 2px;
     function  onComment() {   
     
       document.getElementById("comment").innerHTML = `<form action="https://send.pageclip.co/8b6UOVtWNsmq6kqdwLapTAUXPTNrxkoO/contentform" class="pageclip-form text-center"  method="post">
-                                                        <h4>Anonymous Comment</h4>
+         <img src="https://github.com/user-attachments/assets/db2d384a-4093-4e2f-93b2-dfdaa9933ce4" alt="Avatar" id="myphoto">                                               
+        <h4>Your comment will be Anonymous to me</h4>
                                                         <div>
                                                         <textarea name="body" rows="7" cols="35" wrap="soft">Write Something...</textarea>
                                                         </div>
@@ -228,6 +245,7 @@ border-width: 0 0 2px;
                                                         </button>
                                                         </div>
                                                     </form>`;
+                                                    document.getElementById("name").innerHTML=""                                     
              
     } 
 
